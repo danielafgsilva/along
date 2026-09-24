@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+/* Design tokens extracted from the Along prototype (hull-orange-50776592.figma.site).
+   Warm, editorial, light-only palette. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f1eb; /* cream canvas */
+  --surface: #fdfaf6; /* cards, inputs, sheets */
+  --surface-muted: #e3ddd5; /* chips, subtle fills */
+  --border: #e3ddd5; /* dividers, input borders */
+  --foreground: #1c1a16; /* titles & body text */
+  --muted-foreground: #9a9189; /* secondary text, inactive nav */
+  --accent: #637355; /* sage — primary actions, active state, section labels */
+  --accent-foreground: #fdfaf6; /* text/icons on accent */
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-dm-serif);
+
+  --radius-pill: 9999px;
+  --radius-sheet: 1.25rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Horizontal filter rows: scroll without a visible scrollbar. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
