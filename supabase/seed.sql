@@ -1,0 +1,1 @@
+-- Optional local seed data. `supabase start` applies this file after migrations.
